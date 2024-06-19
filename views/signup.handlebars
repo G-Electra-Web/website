@@ -1,0 +1,34 @@
+<h1>Sign Up</h1>
+{{#if error}}
+  <p style="color: red;">{{error}}</p>
+{{/if}}
+<form id="signup-form" action="/signup" method="POST" onsubmit="return validateSignupForm()">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+  <br>
+  <label for="confirmPassword">Confirm Password:</label>
+  <input type="password" id="confirmPassword" name="confirmPassword" required>
+  <br>
+   <label for="name">Register Number</label>
+    <input type="text" id="regnum" name="regnum" required>
+  <button type="submit">Sign Up</button>
+</form>
+<script>
+  function validateSignupForm() {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    
+    if (password !== confirmPassword) {
+      alert('Passwords do not match!');
+      return false;
+    }
+
+    return true;
+  }
+</script>

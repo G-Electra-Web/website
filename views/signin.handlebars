@@ -2,26 +2,30 @@
 {{#if error}}
   <p style="color: red;">{{error}}</p>
 {{/if}}
-<form id="signin-form" action="/signin" method="POST" onsubmit="return validateSigninForm()">
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
-  <br>
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" required>
-  <br>
-  <button type="submit">Sign In</button>
-</form>
-<script>
-  function validateSigninForm() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+<video autoplay muted loop class="backVideo">
+        <source src="Signup-bg.mp4" type="video/mp4">
+    </video>
 
-    if (email === '' || password === '') {
-      alert('All fields are required!');
-      return false;
-    }
+    <!-- Image and text -->
+    <nav class="navbar nav-bg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">
+        <img src="G-ELECTRA Logo.png" width="60" height="60" class="d-inline-block align-top" alt="">
+        G-ELECTRA
+        </a>
+    </nav>
 
-
-    return true;
-  }
-</script>
+    <div class="login-section">
+        <div class="form-container">
+            <p class="title">Welcome back</p>
+            <form class="form">
+                <input type="email" class="input" placeholder="Email">
+                <input type="password" class="input" placeholder="Password">
+                <p class="page-link-label">Forgot Password?
+                </p>
+                <button class="form-btn">Log in</button>
+            </form>
+            <p class="sign-up-label">
+              Don't have an account? <a href="signup.html" class="sign-up-link">Sign up</a>
+            </p>
+        </div>
+    </div>

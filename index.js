@@ -6,6 +6,9 @@ const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
+// Serve Static Asserts
+app.use(express.static('public'))
+
 // Middleware setup
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: true , name: "geletra-session"}));

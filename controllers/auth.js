@@ -1,3 +1,7 @@
+const bcrypt = require('bcryptjs');
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+
 // Render Pages
 exports.signupGet = (req, res) => {
   res.render('signup', { title: 'SignUp | G Electra', style: 'signup.css' });

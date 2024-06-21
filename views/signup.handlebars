@@ -1,34 +1,31 @@
-<h1>Sign Up</h1>
-{{#if error}}
-  <p style="color: red;">{{error}}</p>
-{{/if}}
-<form id="signup-form" action="/signup" method="POST" onsubmit="return validateSignupForm()">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
-    <br>
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
-  <br>
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" required>
-  <br>
-  <label for="confirmPassword">Confirm Password:</label>
-  <input type="password" id="confirmPassword" name="confirmPassword" required>
-  <br>
-   <label for="name">Register Number</label>
-    <input type="text" id="regnum" name="regnum" required>
-  <button type="submit">Sign Up</button>
-</form>
-<script>
-  function validateSignupForm() {
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    
-    if (password !== confirmPassword) {
-      alert('Passwords do not match!');
-      return false;
-    }
+<video autoplay muted loop class="backVideo">
+        <source src="/asserts/Signup-bg.mp4" type="video/mp4">
+    </video>
 
-    return true;
-  }
-</script>
+    <!-- Image and text -->
+    <nav class="navbar nav-bg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">
+        <img src="/asserts/G-ELECTRA Logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+        G-ELECTRA
+        </a>
+    </nav>
+
+    <div class="signup-section">
+        <div class="form-container">
+            <p class="title">Create account</p>
+            {{#if error}}
+               <p class="sub-title" style="font-size: 1rem;">{{error}}</p>
+            {{/if}}
+            <form class="form" method="post" action="/signup">
+            <input name="name" type="text" class="input" placeholder="Name">
+            <input name="email" type="email" class="input" placeholder="Email">
+            <input name="regnum" type="text" class="input" placeholder="Registration No">
+            <input name="password" type="password" class="input" placeholder="Password">
+            <input name="confirmPassword" type="password" class="input" placeholder="Confirm Password">
+            <button class="form-btn">Create account</button>
+            </form>
+            <p class="sign-up-label">
+            Already have an account? <a href="login.html" class="sign-up-link" >Log in</a>
+            </p>
+        </div>
+    </div>
